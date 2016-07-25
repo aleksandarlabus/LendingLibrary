@@ -16,11 +16,10 @@ public class BookCatalog {
     
     public Book findBook(String title){
                 
-        for (Book book : bookArray) {
-            if (book.getTitle().equalsIgnoreCase(title)){
-                return book;
+        for(int counter = 0; counter < nextPosition; counter++){
+            if (bookArray[counter].getTitle().equalsIgnoreCase(title)){
+                return bookArray[counter];
             }
-            
         }
         return null;
     }

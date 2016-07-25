@@ -16,7 +16,7 @@ public class Main {
         
         ui.printBookCatalogue(bookCatalog.getBookArray());
         
-        Book foundBook = bookCatalog.findBook("better Java");
+        Book foundBook = bookCatalog.findBook("Better Java");
         if(foundBook != null) {
             System.out.println("We found: " + foundBook.getTitle());
         }
