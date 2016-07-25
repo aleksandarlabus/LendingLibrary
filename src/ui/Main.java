@@ -1,7 +1,20 @@
+package ui;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import models.*;
+import utilities.GenderType;
+
 
 public class Main {
     
     public static void main(String[] args) {
+        
+        
+        
+        
         
         BookCatalog bookCatalog = new BookCatalog();
         
@@ -20,6 +33,10 @@ public class Main {
         if(foundBook != null) {
             System.out.println("We found: " + foundBook.getTitle());
         }
+        
+        Customer customer = new Customer("Mr.", "Michael", "Smith", "1 The High Street", "1234", "a@b.com", 1, GenderType.MALE);
+        
+        System.out.println(customer.getExpiryDate());
     }
     
 }

@@ -1,3 +1,8 @@
+package models;
+
+
+import models.Book;
+
 
 public class BookCatalog {
     
