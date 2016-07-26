@@ -1,9 +1,12 @@
 package ui;
 
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import models.*;
 import utilities.GenderType;
 
@@ -12,10 +15,7 @@ public class Main {
     
     public static void main(String[] args) {
         
-        
-        
-        
-        
+               
         BookCatalog bookCatalog = new BookCatalog();
         
         Book book1 = new Book(1, "An introduction to Java", "Matt Greencroft", "12345");
@@ -37,6 +37,7 @@ public class Main {
         Customer customer = new Customer("Mr.", "Michael", "Smith", "1 The High Street", "1234", "a@b.com", 1, GenderType.MALE);
         
         System.out.println(customer.getExpiryDate());
+        System.out.println(customer.getMailingName());
     }
     
 }

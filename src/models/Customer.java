@@ -45,6 +45,10 @@ public class Customer {
         
     }
     
+    public void setSurname(String surname){
+        this.surname = surname;
+    }
+    
     private void setName(String title, String firstName, String surname){
         this.title = title;
         this.firstName = firstName;
@@ -53,10 +57,13 @@ public class Customer {
     }
     
     public String getMailingName(){
-        String mailingName;
-        mailingName = title + " " + firstName.substring(0) + " " + surname;
+        StringBuilder sb = new StringBuilder(title);
+        sb.append(" ");
+        sb.append(firstName.substring(0,1));
+        sb.append(" ");
+        sb.append(surname);
         
-        return mailingName;
+        return sb.toString();
     }
     
     public GenderType getGender(){
