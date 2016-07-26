@@ -3,6 +3,7 @@ package models;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 import utilities.GenderType;
 
 
@@ -78,5 +79,57 @@ public class Customer {
     public String toString(){
         return getMailingName();
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Customer other = (Customer) obj;
+        if (this.customerNumber != other.customerNumber) {
+            return false;
+        }
+        if (this.isValid != other.isValid) {
+            return false;
+        }
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
+        if (!Objects.equals(this.firstName, other.firstName)) {
+            return false;
+        }
+        if (!Objects.equals(this.surname, other.surname)) {
+            return false;
+        }
+        if (!Objects.equals(this.address, other.address)) {
+            return false;
+        }
+        if (!Objects.equals(this.phoneNumber, other.phoneNumber)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (this.gender != other.gender) {
+            return false;
+        }
+        if (!Objects.equals(this.expiryDate, other.expiryDate)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }

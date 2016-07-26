@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import models.*;
 import utilities.GenderType;
 
@@ -37,10 +39,24 @@ public class Main {
         
         ui.printBookCatalogue(bookCatalog.getBookArray());
         
-        Book foundBook = bookCatalog.findBook("Better Java");
-        if(foundBook != null) {
+        Book foundBook;
+        try {
+            foundBook = bookCatalog.findBook("Better");
             System.out.println("We found: " + foundBook.getTitle());
+        } catch (BookNotFoundException ex) {
+            System.out.println("The book wasn't found");
         }
+        
+        int myTest = 1;
+        try {
+            if (myTest != 2) {
+                throw new RuntimeException("Something went wrong");
+            }
+        } catch (RuntimeException e) {
+
+        }
+        
+        
         
         Customer customer = new Customer("Mr.", "Michael", "Smith", "1 The High Street", "1234", "a@b.com", 1, GenderType.MALE);
         
