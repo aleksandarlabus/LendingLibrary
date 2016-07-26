@@ -40,7 +40,26 @@ public abstract class Material {
     public abstract int getLoanPeriod();
             
 
+    @Override
+    public String toString(){
+        return title;
+    }
     
-    
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null){
+            return false;
+        }
+        if(getClass() == obj.getClass()){
+            Material otherClass = (Material)obj;
+            if(id == otherClass.id){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
     
 }

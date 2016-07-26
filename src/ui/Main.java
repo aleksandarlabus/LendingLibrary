@@ -22,6 +22,7 @@ public class Main {
         Book book2 = new Book(2, "Better Java", "Joe Le Blanc", "23456","Anytown branch", 150);
         
         DVD dvd1 = new DVD(3, "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
+        DVD dvd2 = new DVD(3, "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
         
         System.out.println(dvd1.getTitle());
         
@@ -46,16 +47,10 @@ public class Main {
         System.out.println(customer.getExpiryDate());
         System.out.println(customer.getMailingName());
         
-        System.out.println(dvd1.lend(customer));
-        dvd1.licence();
-        System.out.println(dvd1.lend(customer));
-        System.out.println(dvd1.lend(customer));
+        System.out.println(customer);
+        System.out.println(dvd1);
         
-        System.out.println(book1.lend(customer));
-        System.out.println(book1.lend(customer));
-        
-        System.out.println(book1.getLoanPeriod());
-        System.out.println(dvd1.getLoanPeriod());
+        System.out.println(dvd1.equals(dvd2));
     }
     
 }

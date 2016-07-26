@@ -74,4 +74,9 @@ public class Customer {
         return expiryDate;
     }
     
+    @Override
+    public String toString(){
+        return getMailingName();
+    }
+    
 }
