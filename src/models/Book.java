@@ -1,21 +1,18 @@
 package models;
 
 
-public class Book {
-    private int bookID;
-    private String title;
+public class Book extends Material {
+    
+    
     private String author;
     private String isbn;
+    private int numOfPages;
     
-    public Book(int bookID, String title, String author, String isbn){
-        this.bookID = bookID;
-        this.title = title;
+    public Book(int id, String title, String author, String isbn, String branch, int numOfPages){
+        super(id, title, branch);
         this.author = author;
         this.isbn = isbn;
-    }
-    
-    public String getTitle(){
-        return title;
+        this.numOfPages = numOfPages;
     }
     
     public String getAuthor(){
@@ -26,7 +23,14 @@ public class Book {
         return isbn;
     }
     
-    public int getBookID(){
-        return bookID;
+    public void sendRepair(){
+        System.out.println("Book has been sent for repair");
     }
+
+    @Override
+    public int getLoanPeriod() {
+        return 21;
+    }
+    
+    
 }
