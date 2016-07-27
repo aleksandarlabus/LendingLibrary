@@ -1,14 +1,6 @@
 package ui;
 
 
-import java.math.BigDecimal;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import models.*;
 import utilities.GenderType;
 
@@ -18,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         
                
-        BookCatalog bookCatalog = new BookCatalog();
+        MaterialCatalog materialCatalog = new MaterialCatalog();
         
         Book book1 = new Book("1001", "An introduction to Java", "Matt Greencroft", "12345","Anytown branch", 400);
         Book book2 = new Book("223X", "Better Java", "Joe Le Blanc", "23456","Anytown branch", 150);
@@ -26,28 +18,30 @@ public class Main {
         Book book4 = new Book("444X", "Learning More French", "Anton Le Noir", "87654", "Anytown branch", 100);
         Book book5 = new Book("3345", "Enough French Already", "Anton Le Noir", "87654", "Anytown branch", 100);
         
-        //DVD dvd1 = new DVD("3", "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
-        //DVD dvd2 = new DVD("3", "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
+        DVD dvd1 = new DVD("3", "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
+        DVD dvd2 = new DVD("4", "An Epic Film About Java", "Anytown branch", "Stiven Spielberg", "99887", 120);
         
         //System.out.println(dvd1.getTitle());
         //book1.relocate("MyCity branch");
         
         
-        bookCatalog.addBook(book1);
-        bookCatalog.addBook(book2);
-        bookCatalog.addBook(book3);
-        bookCatalog.addBook(book4);
-        bookCatalog.addBook(book5);
+        materialCatalog.addMaterial(book1);
+        materialCatalog.addMaterial(book2);
+        materialCatalog.addMaterial(book3);
+        materialCatalog.addMaterial(book4);
+        materialCatalog.addMaterial(book5);
+        materialCatalog.addMaterial(dvd1);
+        materialCatalog.addMaterial(dvd2);
         
         
         UI ui = new UI();
         ui.printHeader();
         
-        ui.printBookCatalogue(bookCatalog.getBookMap());
+        ui.printMaterialCatalogue(materialCatalog.getMap());
         
 //        Book foundBook;
 //        try {
-//            foundBook = bookCatalog.findBook("Better");
+//            foundBook = materialCatalog.findBook("Better");
 //            System.out.println("We found: " + foundBook.getTitle());
 //        } catch (BookNotFoundException ex) {
 //            System.out.println("The book wasn't found");

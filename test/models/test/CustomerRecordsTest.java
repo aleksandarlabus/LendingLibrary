@@ -5,15 +5,9 @@
  */
 package models.test;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import models.Customer;
 import models.CustomerNotFoundException;
 import models.CustomerRecords;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import utilities.GenderType;

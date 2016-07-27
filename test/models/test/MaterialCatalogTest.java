@@ -6,8 +6,9 @@
 package models.test;
 
 import models.Book;
-import models.BookCatalog;
-import models.BookNotFoundException;
+import models.Material;
+import models.MaterialCatalog;
+import models.MaterialNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,34 +16,34 @@ import static org.junit.Assert.*;
  *
  * @author Aleksandar
  */
-public class BookCatalogTest {
-    private BookCatalog bc;
+public class MaterialCatalogTest {
+    private MaterialCatalog bc;
     private Book book1;
     
-    public BookCatalogTest(){
-        bc = new BookCatalog();
+    public MaterialCatalogTest(){
+        bc = new MaterialCatalog();
         book1 = new Book("2", "Learning Java", "", "", "", 0);
-        bc.addBook(book1);
+        bc.addMaterial(book1);
     }
     
     @Test
     public void testAddBook(){
-        int initialNumber = bc.getNumberOfBooks();
+        int initialNumber = bc.getNumberOfMaterials();
         System.out.println(initialNumber);
         
         Book book = new Book("1", "", "", "", "", 0);
-        bc.addBook(book);
+        bc.addMaterial(book);
         
-        assertTrue(initialNumber == bc.getNumberOfBooks() - 1);
+        assertTrue(initialNumber == bc.getNumberOfMaterials() - 1);
         
     }
     
     @Test
-    public void testFindBook(){
+    public void testFindMaterial(){
                 
         try {
-            Book foundBook = bc.findBook("Learning Java");
-        } catch (BookNotFoundException ex) {
+            Material foundBook = bc.findMaterial("Learning Java");
+        } catch (MaterialNotFoundException ex) {
             fail("Book not found");
         }
            
@@ -52,8 +53,8 @@ public class BookCatalogTest {
     public void testFindBookIgnoreCase(){
                 
         try {
-            Book foundBook = bc.findBook("learning java");
-        } catch (BookNotFoundException ex) {
+            Material foundBook = bc.findMaterial("learning java");
+        } catch (MaterialNotFoundException ex) {
             fail("Book not found");
         }
         
@@ -65,8 +66,8 @@ public class BookCatalogTest {
     public void testFindBookWithExtraSpaces(){
                 
         try {
-            Book foundBook = bc.findBook(" learning java ");
-        } catch (BookNotFoundException ex) {
+            Material foundBook = bc.findMaterial(" learning java ");
+        } catch (MaterialNotFoundException ex) {
             fail("Book not found");
         }
         
@@ -74,10 +75,10 @@ public class BookCatalogTest {
         
     }
     
-    @Test(expected = BookNotFoundException.class)
-    public void testFindBookThatDoesntExist() throws BookNotFoundException{
+    @Test(expected = MaterialNotFoundException.class)
+    public void testFindBookThatDoesntExist() throws MaterialNotFoundException{
                 
-        Book foundBook = bc.findBook("Learning More Java");
+        Material foundBook = bc.findMaterial("Learning More Java");
             
         
         
