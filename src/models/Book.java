@@ -8,7 +8,7 @@ public class Book extends Material {
     private String isbn;
     private int numOfPages;
     
-    public Book(int id, String title, String author, String isbn, String branch, int numOfPages){
+    public Book(String id, String title, String author, String isbn, String branch, int numOfPages){
         super(id, title, branch);
         this.author = author;
         this.isbn = isbn;
