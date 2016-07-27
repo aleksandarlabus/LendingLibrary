@@ -9,8 +9,8 @@ public class Main {
     
     public static void main(String[] args) {
         
-               
-        MaterialCatalog materialCatalog = new MaterialCatalog();
+
+        MaterialCatalogInterface materialCatalog = new MaterialCatalogMemoryVersion();
         
         Book book1 = new Book("1001", "An introduction to Java", "Matt Greencroft", "12345","Anytown branch", 400);
         Book book2 = new Book("223X", "Better Java", "Joe Le Blanc", "23456","Anytown branch", 150);
@@ -37,7 +37,7 @@ public class Main {
         UI ui = new UI();
         ui.printHeader();
         
-        ui.printMaterialCatalogue(materialCatalog.getMap());
+        ui.printMaterialCatalogue(materialCatalog.getMaterialMap());
         
 //        Book foundBook;
 //        try {

@@ -7,7 +7,7 @@ package models.test;
 
 import models.Book;
 import models.Material;
-import models.MaterialCatalog;
+import models.MaterialCatalogMemoryVersion;
 import models.MaterialNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -17,11 +17,11 @@ import static org.junit.Assert.*;
  * @author Aleksandar
  */
 public class MaterialCatalogTest {
-    private MaterialCatalog bc;
+    private MaterialCatalogMemoryVersion bc;
     private Book book1;
     
     public MaterialCatalogTest(){
-        bc = new MaterialCatalog();
+        bc = new MaterialCatalogMemoryVersion();
         book1 = new Book("2", "Learning Java", "", "", "", 0);
         bc.addMaterial(book1);
     }
