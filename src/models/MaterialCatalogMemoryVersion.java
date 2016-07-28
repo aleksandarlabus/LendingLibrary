@@ -1,6 +1,7 @@
 
 package models;
 
+import java.util.List;
 import java.util.TreeMap;
 
 public class MaterialCatalogMemoryVersion implements MaterialCatalogInterface {
@@ -32,5 +33,10 @@ public class MaterialCatalogMemoryVersion implements MaterialCatalogInterface {
     
     public int getNumberOfMaterials(){
         return materialMap.size();
+    }
+
+    @Override
+    public List<Material> findItemsSoundLike(String title) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

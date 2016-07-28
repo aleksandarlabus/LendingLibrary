@@ -6,9 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import org.apache.commons.codec.language.Metaphone;
 
 public class MaterialCatalogDatabaseVersion implements MaterialCatalogInterface {
 
@@ -201,6 +204,22 @@ public class MaterialCatalogDatabaseVersion implements MaterialCatalogInterface 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<Material> findItemsSoundLike(String title) {
+        Map<String, Material> allItems = getMaterialMap();
+        List<Material> results = new ArrayList<>();
+        
+        Metaphone mph = new Metaphone();
+        
+        String mphTitle = mph.encode(title);
+        for(Material nextMaterial : allItems.values()){
+            if(mph.encode(nextMaterial.getTitle()).equals(mphTitle)){
+                results.add(nextMaterial);
+            }
+        }
+        return results;
     }
 
 }
