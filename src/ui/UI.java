@@ -3,6 +3,7 @@ package ui;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.TreeMap;
 import models.Book;
 import models.Material;
@@ -37,7 +38,7 @@ public class UI {
         return fixLengthString(startString, length);
     }
 
-    public void printMaterialCatalogue(TreeMap<String, Material> materialCatalog) {
+    public void printMaterialCatalogue(Map<String, Material> materialCatalog) {
         for(Material nextMaterial : materialCatalog.values()){
             
                System.out.println(nextMaterial.toString());

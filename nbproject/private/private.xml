@@ -5,13 +5,14 @@
         <group>
             <file>file:/C:/JAVA/LendingLibrary/src/models/MaterialNotFoundException.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/CustomerNotFoundException.java</file>
+            <file>file:/C:/JAVA/LendingLibrary/src/models/MaterialCatalogDatabaseVersion.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/ui/Main.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/ui/UI.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/Loan.java</file>
+            <file>file:/C:/JAVA/LendingLibrary/src/models/MaterialCatalogInterface.java</file>
             <file>file:/C:/JAVA/LendingLibrary/test/models/test/BookTest.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/LoanNotFoundException.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/DVD.java</file>
-            <file>file:/C:/JAVA/LendingLibrary/src/models/MaterialCatalog.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/utilities/LoanStatus.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/LoanAlreadyExistsException.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/Book.java</file>
@@ -21,7 +22,9 @@
             <file>file:/C:/JAVA/LendingLibrary/src/models/Material.java</file>
             <file>file:/C:/JAVA/LendingLibrary/test/models/test/MaterialCatalogTest.java</file>
             <file>file:/C:/JAVA/LendingLibrary/src/models/CustomerRecords.java</file>
+            <file>file:/C:/JAVA/LendingLibrary/src/ui/DatabaseConnectionTesting.java</file>
             <file>file:/C:/JAVA/LendingLibrary/test/models/test/LoanTest.java</file>
+            <file>file:/C:/JAVA/LendingLibrary/src/models/MaterialCatalogMemoryVersion.java</file>
         </group>
     </open-files>
 </project-private>

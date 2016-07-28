@@ -1,6 +1,8 @@
 package ui;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import models.*;
 import utilities.GenderType;
 
@@ -10,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         
 
-        MaterialCatalogInterface materialCatalog = new MaterialCatalogMemoryVersion();
+        MaterialCatalogInterface materialCatalog = new MaterialCatalogDatabaseVersion();
         
         Book book1 = new Book("1001", "An introduction to Java", "Matt Greencroft", "12345","Anytown branch", 400);
         Book book2 = new Book("223X", "Better Java", "Joe Le Blanc", "23456","Anytown branch", 150);
@@ -33,6 +35,14 @@ public class Main {
         materialCatalog.addMaterial(dvd1);
         materialCatalog.addMaterial(dvd2);
         
+        System.out.println("There are: " + materialCatalog.getNumberOfMaterials() + " items in the library");
+        
+        try {
+            Material foundMaterial = materialCatalog.findMaterial("Java");
+            System.out.println(foundMaterial.getTitle());
+        } catch (MaterialNotFoundException ex) {
+            System.out.println("No matching items found");
+        }
         
         UI ui = new UI();
         ui.printHeader();

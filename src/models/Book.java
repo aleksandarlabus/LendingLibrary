@@ -26,6 +26,10 @@ public class Book extends Material {
     public void sendRepair(){
         System.out.println("Book has been sent for repair");
     }
+    
+    public int getNumberOfPages(){
+        return numOfPages;
+    }
 
     @Override
     public int getLoanPeriod() {
